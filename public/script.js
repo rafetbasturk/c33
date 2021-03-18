@@ -4,6 +4,7 @@ const price = document.querySelector("#price").children[0]
 const toggle = document.querySelector("#toggle")
 const monthly = document.querySelector(".monthly")
 const yearly = document.querySelector(".yearly")
+const time = document.querySelector("#time")
 
 const prices = [8, 12, 16, 24, 36]
 const pageViews = ["10K", "50K", "100K", "500K", "1M"]
@@ -29,6 +30,7 @@ bar.oninput = function(array) {
     }
 
     if (toggle.children[0].classList.contains("floatRight")) {
+        time.innerText = "/ year"
         if (this.value == 1) {
             price.innerText = prices[0] * 3 / 4
         }
@@ -45,6 +47,7 @@ bar.oninput = function(array) {
             price.innerText = prices[4] * 3 / 4
         }
     } else {
+        time.innerText = "/ month"
         if (this.value == 1) {
             price.innerText = prices[0]
         }
